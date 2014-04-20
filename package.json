@@ -1,0 +1,28 @@
+{
+  "name": "ChromeMarks",
+  "version": "0.1.0",
+  "description": "Export Chrome/Chromium bookmarks file to stylized HTML",
+  "main": "app.js",
+  "dependencies": {
+    "scp": "~0.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/TheInsomniac/ChromeMarks"
+  },
+  "keywords": [
+    "chrome",
+    "chromium",
+    "node.js",
+    "bookmarks"
+  ],
+  "author": "TheInsomniac",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/TheInsomniac/ChromeMarks/issues"
+  }
+}
