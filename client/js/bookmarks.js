@@ -1,4 +1,9 @@
-$.getJSON('bookmarks.json', function(data) {
+$.getJSON('bookmarks.json', function(data, status, request) {
+  'use strict';
+  var modified = new Date(request.getResponseHeader('Last-Modified'));
+  var $lm = $('#lastModified');
+  if (modified) $lm.html($lm.html() + modified);
+  else $lm.html($lm.html() + 'Unknown');
   createList(data);
   $('ul > li > span').on('click', function() {
     var $this = $(this).next();
@@ -8,9 +13,10 @@ $.getJSON('bookmarks.json', function(data) {
 });
 
 $('#toggle').on('click', function() {
+  'use strict';
   var $this = $(this);
   if ($this.html() === 'Expand All') {
-  $('span + ul').show();
+    $('span + ul').show();
     $this.html('Collapse All');
   } else {
     $('span + ul').hide();
@@ -19,7 +25,7 @@ $('#toggle').on('click', function() {
 });
 
 $('#query input[name="query"]').on('keypress', function(e) {
-  //e.preventDefault();
+  'use strict';
   if (e.which == 13) {
     searchFunction($(this).val());
     return false;
@@ -27,6 +33,7 @@ $('#query input[name="query"]').on('keypress', function(e) {
 });
 
 function searchFunction(query) {
+  'use strict';
   query = new RegExp(query, 'i');
   var $searchResults = $('#searchResults');
   if (!$searchResults.is(':empty')) $searchResults.empty();
@@ -46,6 +53,7 @@ function searchFunction(query) {
 }
 
 function createList(collection) {
+  'use strict';
   var el = document.getElementById('bookmarks');
   el.appendChild(json2html(collection));
 }

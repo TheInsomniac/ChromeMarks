@@ -90,6 +90,13 @@ input {
   margin: 2% auto;
 }
 
+#lastModified {
+  font-size: 0.8em;
+  font-style: italic;
+  color: #cdcdcd;
+  text-align: center;
+}
+
 ul > li > span {
   font-size: 1.5rem;
   cursor: pointer;
